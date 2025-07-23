@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+* {
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+body::before {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -200px;
+    background: radial-gradient(circle, #e91e63 0%, #ffc107 100%);
+    opacity: 0.5;
+}
+
+body::after {
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    right: -150px;
+    background: radial-gradient(circle, #00fff0 0%, #da00ff 100%);
+    opacity: 0.4;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    background: rgba(30, 32, 48, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    overflow: hidden;
+    padding: 2rem;
+    backdrop-filter: blur(18px);
+    border: 1.5px solid rgba(255,255,255,0.08);
+    max-width: 350px;
+    width: 90vw;
+    transition: box-shadow 0.3s;
+}
+
+.container:hover {
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.calculator .value {
+    grid-column: span 4;
+    height: 90px;
+    width: 100%;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 18px 16px;
+    font-size: 2.2rem;
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+.calculator .span {
+    display: grid;
+    place-items: center;
+    height: 60px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.3rem;
+    user-select: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+
+.calculator .span:hover {
+    background: linear-gradient(90deg, #00fff0 0%, #da00ff 100%);
+    color: #222;
+    transform: translateY(-2px) scale(1.04);
+}
+
+.calculator .span:active {
+    background: #14ff47;
+    color: #192f00;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transform: scale(0.97);
+}
+
+.calculator .clear {
+    grid-column: span 2;
+    background: linear-gradient(90deg, #ff5858 0%, #ffc107 100%);
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(255,88,88,0.13);
+}
+
+.calculator .plus {
+    grid-row: span 2;
+    height: 132px;
+    background: linear-gradient(180deg, #00fff0 0%, #da00ff 100%);
+    color: #222;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(218,0,255,0.13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator .equal {
+    background: linear-gradient(90deg, #14ff47 0%, #00fff0 100%);
+    color: #222;
+    font-weight: 700;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(20,255,71,0.13);
+}
+
+/* Adições ao CSS existente */
+.calculator .num {
+    display: grid;
+    place-items: center;
+    height: 60px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.3rem;
+    user-select: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.15s ease;
+}
+
+.calculator .num:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+.calculator .num:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.calculator .operator {
+    background: rgba(255,255,255,0.1);
+    font-weight: 700;
+}
+
+.calculator .operator:hover {
+    background: linear-gradient(135deg, #00fff0 0%, #da00ff 100%);
+    color: #222;
+}
+
+.calculator .clear {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #ff5858 0%, #f09819 100%);
+    color: #fff;
+}
+
+.calculator .plus {
+    grid-row: span 2;
+    height: 132px;
+    background: linear-gradient(135deg, #00fff0 0%, #da00ff 100%);
+    color: #222;
+    font-weight: 700;
+}
+
+.calculator .equal {
+    background: linear-gradient(135deg, #14ff47 0%, #00fff0 100%);
+    color: #222;
+    font-weight: 700;
+}
+
+/* Efeito de pressionar */
+.calculator .num.pressed {
+    transform: scale(0.95);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Animações */
+@keyframes buttonPress {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.num:active {
+    animation: buttonPress 0.2s ease;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 1rem;
+        max-width: 98vw;
+    }
+    .calculator .value {
+        font-size: 1.3rem;
+        height: 60px;
+        padding: 10px 8px;
+    }
+    .calculator .span,
+    .calculator .plus {
+        height: 44px;
+        font-size: 1rem;
+    }
+    .calculator .plus {
+        height: 92px;
+        font-size: 1.2rem;
+    }
+}
