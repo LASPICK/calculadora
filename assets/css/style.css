@@ -149,7 +149,7 @@ body::after {
     box-shadow: 0 2px 8px rgba(20,255,71,0.13);
 }
 
-/* Adições ao CSS existente */
+/* Adições ao CSS */
 .calculator .num {
     display: grid;
     place-items: center;
